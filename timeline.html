@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>CSS animation timeline</title>
+<style rel="stylesheet" href="css/timeline.css"></style>
+
+<!-- Custom elements -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/polymer/0.1.3/platform.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/polymer/0.1.3/polymer.js"></script>
+<script src="js/elements.js"></script>
+
+<cat-timeline>
+
+	<cat-times>
+		<cat-time>0s</cat-time>
+		<cat-time>1s</cat-time>
+		<cat-time>2s</cat-time>
+		<cat-time>3s</cat-time>
+		<cat-time>4s</cat-time>
+		<cat-time>5s</cat-time>
+		<cat-time>6s</cat-time>
+	</cat-times>
+	
+	<cat-selectors>
+		<cat-selector id="cat-selector-1">#el-1</cat-selector>
+		<cat-selector id="cat-selector-2">#el-2</cat-selector>
+	</cat-selectors>
+	
+	<cat-animations>
+
+		<cat-animation aria-describedby="cat-selector-1">
+			<dl>
+				<dt>Name
+				<dd>animation-1
+				<dt>Delay
+				<dd>0s
+			</dl>
+			<cat-keyframe>
+				<dl>
+					<dt>At time
+					<dd>0%
+					<dt>Properties
+					<dd><code>color: red;</code>
+				</dl>
+			</cat-keyframe>
+			<cat-keyframe>
+				<dl>
+					<dt>At time
+					<dd>100%
+					<dt>Properties
+					<dd><code>color: green;</code>
+				</dl>
+			</cat-keyframe>
+		</cat-animation>
+
+
+		<cat-animation aria-describedby="cat-selector-2">
+			<dl>
+				<dt>Name
+				<dd>animation-1
+				<dt>Delay
+				<dd>0s
+			</dl>
+			<cat-keyframe>
+				<dl>
+					<dt>At time
+					<dd>0%
+					<dt>Properties
+					<dd><code>color: red;</code>
+				</dl>
+			</cat-keyframe>
+			<cat-keyframe>
+				<dl>
+					<dt>At time
+					<dd>100%
+					<dt>Properties
+					<dd><code>color: green;</code>
+				</dl>
+			</cat-keyframe>
+		</cat-animation>
+	</cat-animations>
+
+</cat-timeline>

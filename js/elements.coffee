@@ -1,0 +1,10 @@
+fromPrototype = (el) -> prototype: (Object.create el.prototype)
+
+CatTimeline = document.registerElement 'cat-timeline', (fromPrototype HTMLElement)
+CatTimeline = document.registerElement 'cat-times', (fromPrototype HTMLElement)
+CatTimeline = document.registerElement 'cat-time', (fromPrototype HTMLDivElement)
+CatTimeline = document.registerElement 'cat-selectors', (fromPrototype HTMLElement)
+CatTimeline = document.registerElement 'cat-selector', (fromPrototype HTMLElement)
+CatTimeline = document.registerElement 'cat-animations', (fromPrototype HTMLElement)
+CatTimeline = document.registerElement 'cat-animation', (fromPrototype HTMLElement)
+CatTimeline = document.registerElement 'cat-keyframe', (fromPrototype HTMLElement)
