@@ -39,6 +39,7 @@ cat-gridline {
 	height: 100%;
 	min-width: 200px;
 	position: relative;
+	left: 0;
 	text-align: center;
 	text-indent: -200px;
 	cursor: all-scroll;
@@ -57,8 +58,8 @@ cat-gridline:before {
 }
 
 cat-gridline:first-child:before {
-	border-left-width: 15px;
-	left: -15px;
+	border-left-width: 22px;
+	left: -12px;
 }
 
 cat-gridline:nth-child(even):before {
@@ -73,12 +74,24 @@ cat-animations {
 	border-top: 1px solid #ccc;
 }
 
-cat-animation {
+cat-animations:before {
 	background: #eee;
 	border-right: 1px solid #ccc;
+	content: '';
+	display: block;
+	height: 100%;
+	width: 187px;
+	position: absolute;
+}
+
+cat-animation {
+	background: #eee;
 	border-bottom: 1px solid #ccc;
 	box-shadow: inset 1px 1px 3px rgba(255,255,255,.8), inset 0 -1px 1px rgba(0,0,0,.1);
 	padding: .4em 0;
+	position: relative;
+	width:187px;
+	z-index: 1;
 }
 
 cat-selector {
@@ -98,9 +111,11 @@ cat-keyframes {
 	cursor: default;
 	background: #9cf;
 	border: 2px solid #9cf;
-	border-radius: 10px;
+	border-right-width: 12px;
+	border-left-width: 12px;
+	border-radius: 15px;
 	margin: 0 0 .5em 188px;
-	padding-left: 20px;
+	padding: 0;
 	position: relative;
 	height: 20px;
 	transition: background .3s, box-shadow .3s;
@@ -121,7 +136,7 @@ cat-keyframe {
 	border-radius: 10px;
 	height: 20px;
 	width: 20px;
-	margin-left: -20px;
+	margin-left: -10px;
 	position: absolute;
 	top: 0;
 }

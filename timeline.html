@@ -25,7 +25,7 @@
 
 		<cat-animation>
 			<cat-selector>#el-1</cat-selector>
-			<cat-keyframes style="width: 400px;">
+			<cat-keyframes style="width:400px">
 				<cat-name>traffic</cat-name>
 				<cat-keyframe>
 					<cat-time>0%</cat-time>
@@ -55,19 +55,27 @@
 
 		<cat-animation>
 			<cat-selector>#el-2</cat-selector>
-			<cat-keyframes>
-				<cat-name>traffic</cat-name>
+			<cat-keyframes style="width:400px;">
+				<cat-name>spectrum</cat-name>
 				<cat-keyframe>
 					<cat-time>0%</cat-time>
 					<cat-properties>color: red;</cat-properties>
 				</cat-keyframe>
+				<cat-keyframe style="left: 25%">
+					<cat-time>25%</cat-time>
+					<cat-properties>color: yellow;</cat-properties>
+				</cat-keyframe>
 				<cat-keyframe style="left: 50%">
 					<cat-time>50%</cat-time>
-					<cat-properties>color: yellow;</cat-properties>
+					<cat-properties>color: green;</cat-properties>
+				</cat-keyframe>
+				<cat-keyframe style="left: 75%">
+					<cat-time>75%</cat-time>
+					<cat-properties>color: blue;</cat-properties>
 				</cat-keyframe>
 				<cat-keyframe style="left: 100%">
 					<cat-time>100%</cat-time>
-					<cat-properties>color: green;</cat-properties>
+					<cat-properties>color: purple;</cat-properties>
 				</cat-keyframe>
 			</cat-keyframes>
 		</cat-animation>
