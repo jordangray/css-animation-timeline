@@ -1,10 +1,127 @@
+/* Mock up using custom elements */
+
 cat-timeline,
-cat-times,
-cat-time,
-cat-selectors,
-cat-selector,
+cat-grid,
+cat-gridline,
 cat-animations,
 cat-animation,
-cat-keyframe {
+cat-selector,
+cat-keyframes,
+cat-keyframe,
+cat-time,
+cat-properties {
 	display: block;
+}
+
+cat-timeline {
+	background: #f9f9f9;
+	border: 1px solid #ccc;
+	height: 250px;
+	width: 900px;
+	overflow: hidden;
+	padding-top: 1.5em;
+	position: relative;
+	font: normal 14px/18px Consolas, Courier New, Courier, monospace;
+}
+
+cat-grid {
+	display: -webkit-flex;
+	flex-flow: row;
+	height: 100%;
+	padding: .2em 0 0 200px;
+	overflow-x: hidden;
+	position: absolute;
+	top: 0;
+}
+
+cat-gridline {
+	display: block;
+	height: 100%;
+	min-width: 200px;
+	position: relative;
+	text-align: center;
+	text-indent: -200px;
+	cursor: all-scroll;
+}
+
+/* This is a bit convoluted, maybe consider gradient background? */
+
+cat-gridline:before {
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 1.4em;
+	width: 100%;
+	height: 100%;
+	border-left: 1px solid #ccc;
+}
+
+cat-gridline:first-child:before {
+	border-left-width: 15px;
+	left: -15px;
+}
+
+cat-gridline:nth-child(even):before {
+	background: white;
+}
+
+cat-gridline:nth-child(odd):before {
+	background: #f3f9ff;
+}
+
+cat-animations {
+	border-top: 1px solid #ccc;
+}
+
+cat-animation {
+	background: #eee;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	box-shadow: inset 1px 1px 3px rgba(255,255,255,.8), inset 0 -1px 1px rgba(0,0,0,.1);
+	padding: .4em 0;
+}
+
+cat-selector {
+	font: bold 16px/20px Consolas, Courier New, Courier, monospace;
+	text-align: right;
+	width: 175px;
+	float: left;
+}
+
+cat-name,
+cat-time,
+cat-properties {
+	display: none;
+}
+
+cat-keyframes {
+	cursor: default;
+	background: #9cf;
+	border: 2px solid #9cf;
+	border-radius: 10px;
+	margin: 0 0 .5em 188px;
+	padding-left: 20px;
+	position: relative;
+	height: 20px;
+	transition: background .3s, box-shadow .3s;
+}
+
+cat-keyframes:last-child {
+	margin-bottom: 0;
+}
+
+cat-keyframes:hover {
+	background: #5ae;
+	box-shadow: inset 1px 1px 0px rgba(0,0,0,.1), 1px 1px 0px rgba(255,255,255,.8);
+}
+
+cat-keyframe {
+	cursor: ew-resize;
+	background: #28f;
+	border-radius: 10px;
+	height: 20px;
+	width: 20px;
+	margin-left: -20px;
+	position: absolute;
+	top: 0;
 }
