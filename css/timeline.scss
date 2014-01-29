@@ -22,7 +22,6 @@ cat-timeline {
 	padding-top: 1.5em;
 	position: relative;
 	font: normal 14px/18px Consolas, Courier New, Courier, monospace;
-	cursor: all-scroll;
 }
 
 cat-grid {
@@ -33,7 +32,7 @@ cat-grid {
 	overflow-x: hidden;
 	position: absolute;
 	top: 0;
-	z-index: 1;
+	z-index: 3;
 }
 
 cat-grid:before {
@@ -68,38 +67,24 @@ cat-gridline {
 	left: 0px;
 	text-align: center;
 	text-indent: -200px;
-}
-
-/* This is a bit convoluted, maybe consider gradient background? */
-
-cat-gridline:before {
-	background: white;
-	content: ' ';
-	display: block;
-	position: absolute;
-	top: 1.4em;
-	width: 100%;
-	bottom: 0;
-	border-left: 1px solid #ccc;
-	z-index: -1;
-}
-
-cat-gridline:first-child:before {
-	border-left-width: 22px;
-	left: -12px;
-}
-
-cat-gridline:nth-child(odd):before {
-	background: #f3f9ff;
+	cursor: all-scroll;
 }
 
 cat-animations {
+	background: linear-gradient(to right, transparent 189px, #ccc 189px, #ccc 211px, transparent 211px) no-repeat,
+				linear-gradient(to right, #ccc 1px, transparent 1px), 
+	            linear-gradient(to right, #f3f9ff 199px, #fff 200px);
+	background-size: 100%, 200px, 400px;
+	border-bottom: 1px solid #ccc;
 	position: relative;
-	z-index: 2;
-	margin-top: 1px;
-	height: 100%;
+}
+
+cat-animation {
+	padding: .4em 0;
+	position: relative;
 	width: 188px;
-	cursor: default;
+	z-index: 2;
+	position: relative;
 }
 
 cat-animations:before {
@@ -110,13 +95,7 @@ cat-animations:before {
 	height: 100%;
 	width: 187px;
 	position: absolute;
-	z-index: 2;
-}
-
-cat-animation {
-	padding: .4em 0;
-	position: relative;
-	width: 188px;
+	z-index: 1;
 }
 
 cat-selector {
@@ -153,6 +132,7 @@ cat-keyframes {
 	position: relative;
 	height: 20px;
 	transition: background .3s, box-shadow .3s;
+	z-index: 1;
 }
 
 cat-keyframes:last-child {
