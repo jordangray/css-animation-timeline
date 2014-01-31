@@ -14,7 +14,8 @@ cat-keyframes,
 cat-keyframe,
 cat-time,
 cat-properties,
-cat-controls {
+cat-controls,
+cat-tracker {
 	display: block;
 }
 
@@ -161,6 +162,17 @@ cat-keyframe {
 	margin-left: -10px;
 	position: absolute;
 	top: 0;
+}
+
+cat-tracker {
+	background: #28f;
+	bottom: 31px;
+	margin-left: 200px;
+	position: absolute;
+	top: calc(1.5em + 1px);
+	width: 1px;
+	visibility: hidden;
+	z-index: 9;
 }
 
 
@@ -326,7 +338,6 @@ progress::-webkit-progress-bar-value, progress::-webkit-progress-value {
 }
 
 #seek {
-	-webkit-appearance: none;
 	appearance: none;
 	background: transparent;
 	border: none;
@@ -343,7 +354,6 @@ progress::-webkit-progress-bar-value, progress::-webkit-progress-value {
 }
 
 #seek::-webkit-slider-thumb {
-	-webkit-appearance: none;
 	appearance: none;
 	background: #666;
 	border-radius: 10px;
