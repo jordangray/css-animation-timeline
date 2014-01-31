@@ -11,3 +11,4 @@ CatTimeline = document.registerElement 'cat-keyframe',   (fromPrototype HTMLElem
 CatTimeline = document.registerElement 'cat-name',       (fromPrototype HTMLHeadingElement)
 CatTimeline = document.registerElement 'cat-time',       (fromPrototype HTMLHeadingElement)
 CatTimeline = document.registerElement 'cat-properties', (fromPrototype HTMLElement)
+CatTimeline = document.registerElement 'cat-controls',   (fromPrototype HTMLElement)

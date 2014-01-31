@@ -1,5 +1,9 @@
 /* Mock up using custom elements */
 
+body {
+	margin: 0;
+}
+
 cat-timeline,
 cat-grid,
 cat-gridline,
@@ -16,10 +20,10 @@ cat-controls {
 
 cat-timeline {
 	background: #f9f9f9;
-	border: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 	font: normal 14px/18px Consolas, Courier New, Courier, monospace;
 	height: 200px;
-	width: 900px;
+	width: 100%;
 	overflow: hidden;
 	padding: 1.5em 0 30px;
 	position: relative;
@@ -170,7 +174,7 @@ cat-controls {
 	right: 0;
 	height: 30px;
 	line-height: 25px;
-	padding-left: 70px;
+	padding-left: 90px;
 	font-size: 0;
 	z-index: 2;
 }
@@ -230,12 +234,12 @@ cat-timeline button {
 #pause:after {
 	background: #666;
 	height: 16px;
-	left: 4px;
+	left: 8px;
 	width: 5px;
 }
 
 #pause:after {
-	left: 13px;
+	left: 15px;
 }
 
 #skip-end:before {
@@ -283,21 +287,73 @@ cat-timeline button {
 cat-timeline progress {
 	background: #28f;
 	border: none;
-	border-left: 1px solid #ccc;
+	border: 1px solid #999;
+	border-radius: 5px;
 	display: block;
-	height: 30px;
+	height: 10px;
 	position: absolute;
-	bottom: 0;
+	bottom: 10px;
 	left: 187px;
 	width: auto;
-	right: 0;
+	right: 10px;
 	text-align: left;
 	z-index: 1;
 }
 
-progress::-moz-progress-bar { background: #9cf; }
-progress::-ms-progress-bar { background: #9cf; }
-progress::-webkit-progress-bar { background: #9cf; }
-progress::progress-bar { background: #9cf; }
+progress::-moz-progress-bar {
+	background: #9cf;
+	border-radius: 5px;
+}
 
-progress::-webkit-progress-bar-value, progress::-webkit-progress-value { background: #28f; }
+progress::-ms-progress-bar {
+	background: #9cf;
+	border-radius: 5px;
+}
+
+progress::-webkit-progress-bar {
+	background: #ccc;	
+	border-radius: 5px;
+}
+
+progress::progress-bar {
+	background: #9cf;
+	border-radius: 5px;
+}
+
+progress::-webkit-progress-bar-value, progress::-webkit-progress-value {
+	background: #9cf;
+	border-radius: 5px;
+}
+
+#seek {
+	-webkit-appearance: none;
+	appearance: none;
+	background: transparent;
+	border: none;
+	display: block;
+	height: 0px;
+	margin: 0;
+	outline: none;
+	padding: 0;
+	position: absolute;
+	top: 15px;
+	right: 0px;
+	width: calc(100% - 178px);
+	z-index: 1;
+}
+
+#seek::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	background: #666;
+	border-radius: 10px;
+	box-shadow: 0 0 2px rgba(0,0,0,.3);
+	height: 20px;
+	width: 20px;
+}
+
+#seek:focus::-webkit-slider-thumb,
+#seek:hover::-webkit-slider-thumb {
+	background: #28f;
+	box-shadow: 0px 0px 5px #28f; 
+}
