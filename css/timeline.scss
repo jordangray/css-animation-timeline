@@ -338,6 +338,7 @@ progress::-webkit-progress-bar-value, progress::-webkit-progress-value {
 }
 
 #seek {
+	-webkit-appearance: none;
 	appearance: none;
 	background: transparent;
 	border: none;
@@ -354,6 +355,7 @@ progress::-webkit-progress-bar-value, progress::-webkit-progress-value {
 }
 
 #seek::-webkit-slider-thumb {
+	-webkit-appearance: none;
 	appearance: none;
 	background: #666;
 	border-radius: 10px;
