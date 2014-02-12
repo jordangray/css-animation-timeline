@@ -39,30 +39,30 @@ cat-grid {
 	position: absolute;
 	top: 0;
 	z-index: 3;
-}
 
-cat-grid:before {
-	background: linear-gradient(to right, #f9f9f9 75%, transparent);
-	content: '';
-	display: block;
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 1.5em;
-	width: 200px;
-	z-index: 1;
-}
+	&:before {
+		background: linear-gradient(to right, #f9f9f9 75%, transparent);
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 1.5em;
+		width: 200px;
+		z-index: 1;
+	}
 
-cat-grid:after {
-	background: #f3f3f3;
-	border-bottom: 1px solid #ccc;
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 1.5em;
-	z-index: -1;
+	&:after {
+		background: #f3f3f3;
+		border-bottom: 1px solid #ccc;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1.5em;
+		z-index: -1;
+	}
 }
 
 cat-gridline {
@@ -93,17 +93,17 @@ cat-animation {
 	width: 188px;
 	z-index: 2;
 	position: relative;
-}
 
-cat-animations:before {
-	background: #eee;
-	border-right: 1px solid #ccc;
-	content: '';
-	display: block;
-	height: 100%;
-	width: 187px;
-	position: absolute;
-	z-index: 1;
+	&:before {
+		background: #eee;
+		border-right: 1px solid #ccc;
+		content: '';
+		display: block;
+		height: 100%;
+		width: 187px;
+		position: absolute;
+		z-index: 1;
+	}
 }
 
 cat-selector {
@@ -142,15 +142,15 @@ cat-keyframes {
 	height: 20px;
 	transition: background .3s, box-shadow .3s;
 	z-index: 1;
-}
 
-cat-keyframes:last-child {
-	margin-bottom: 0;
-}
+	&:last-child {
+		margin-bottom: 0;
+	}
 
-cat-keyframes:hover {
-	background: #5ae;
-	box-shadow: inset 1px 1px 1px rgba(0,0,0,.1), inset -1px -1px 1px rgba(0,0,0,.1);
+	&:hover {
+		background: #5ae;
+		box-shadow: inset 1px 1px 1px rgba(0,0,0,.1), inset -1px -1px 1px rgba(0,0,0,.1);
+	}
 }
 
 cat-keyframe {
@@ -217,20 +217,22 @@ cat-timeline button {
 	-webkit-filter: drop-shadow(0px 0px 2px rgba(0,0,0,.3));
 }
 
-#skip-start:before {
-	background: #666;
-	height: 16px;
-	left: 4px;
-	width: 5px;
-}
+#skip-start {
+	&:before {
+		background: #666;
+		height: 16px;
+		left: 4px;
+		width: 5px;
+	}
 
-#skip-start:after {
-	height: 0;
-	width: 0;
-	border: 8px solid transparent;
-	border-left: none;
-	border-right: 12px solid #666;
-	left: 8px;
+	&:after {
+		height: 0;
+		width: 0;
+		border: 8px solid transparent;
+		border-left: none;
+		border-right: 12px solid #666;
+		left: 8px;
+	}
 }
 
 #play:before {
@@ -242,32 +244,36 @@ cat-timeline button {
 	border-right: none;
 }
 
-#pause:before,
-#pause:after {
-	background: #666;
-	height: 16px;
-	left: 8px;
-	width: 5px;
+#pause {
+	&:before,
+	&:after {
+		background: #666;
+		height: 16px;
+		left: 8px;
+		width: 5px;
+	}
+
+	&:after {
+		left: 15px;
+	}
 }
 
-#pause:after {
-	left: 15px;
-}
+#skip-end {
+	&:before {
+		height: 0;
+		width: 0;
+		border: 8px solid transparent;
+		border-right: none;
+		border-left: 12px solid #666;
+		left: 4px;
+	}
 
-#skip-end:before {
-	height: 0;
-	width: 0;
-	border: 8px solid transparent;
-	border-right: none;
-	border-left: 12px solid #666;
-	left: 4px;
-}
-
-#skip-end:after {
-	background: #666;
-	height: 16px;
-	left: 16px;
-	width: 5px;
+	&:after {
+		background: #666;
+		height: 16px;
+		left: 16px;
+		width: 5px;
+	}
 }
 
 #skip-end:hover:before,
@@ -310,31 +316,32 @@ cat-timeline progress {
 	right: 10px;
 	text-align: left;
 	z-index: 1;
-}
 
-progress::-moz-progress-bar {
-	background: #9cf;
-	border-radius: 5px;
-}
+	&::-moz-progress-bar {
+		background: #9cf;
+		border-radius: 5px;
+	}
 
-progress::-ms-progress-bar {
-	background: #9cf;
-	border-radius: 5px;
-}
+	&::-ms-progress-bar {
+		background: #9cf;
+		border-radius: 5px;
+	}
 
-progress::-webkit-progress-bar {
-	background: #ccc;	
-	border-radius: 5px;
-}
+	&::-webkit-progress-bar {
+		background: #ccc;	
+		border-radius: 5px;
+	}
 
-progress::progress-bar {
-	background: #9cf;
-	border-radius: 5px;
-}
+	&::progress-bar {
+		background: #9cf;
+		border-radius: 5px;
+	}
 
-progress::-webkit-progress-bar-value, progress::-webkit-progress-value {
-	background: #9cf;
-	border-radius: 5px;
+	&::-webkit-progress-bar-value,
+	&::-webkit-progress-value {
+		background: #9cf;
+		border-radius: 5px;
+	}
 }
 
 #seek {
@@ -352,20 +359,20 @@ progress::-webkit-progress-bar-value, progress::-webkit-progress-value {
 	right: 0px;
 	width: calc(100% - 178px);
 	z-index: 1;
-}
 
-#seek::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	background: #666;
-	border-radius: 10px;
-	box-shadow: 0 0 2px rgba(0,0,0,.3);
-	height: 20px;
-	width: 20px;
-}
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		background: #666;
+		border-radius: 10px;
+		box-shadow: 0 0 2px rgba(0,0,0,.3);
+		height: 20px;
+		width: 20px;
+	}
 
-#seek:focus::-webkit-slider-thumb,
-#seek:hover::-webkit-slider-thumb {
-	background: #28f;
-	box-shadow: 0px 0px 5px #28f; 
+	&:focus::-webkit-slider-thumb,
+	&:hover::-webkit-slider-thumb {
+		background: #28f;
+		box-shadow: 0px 0px 5px #28f; 
+	}
 }

@@ -1,14 +1,20 @@
-fromPrototype = (el) -> prototype: (Object.create el.prototype)
+fromPrototype = (el, custom) ->
+	if custom?
+		prototype: (Object.create el.prototype, custom)
+	else
+		prototype: (Object.create el.prototype)
 
-CatTimeline = document.registerElement 'cat-timeline',   (fromPrototype HTMLElement)
-CatTimeline = document.registerElement 'cat-grid',       (fromPrototype HTMLElement)
-CatTimeline = document.registerElement 'cat-gridline',   (fromPrototype HTMLElement)
-CatTimeline = document.registerElement 'cat-animations', (fromPrototype HTMLElement)
-CatTimeline = document.registerElement 'cat-animation',  (fromPrototype HTMLElement)
-CatTimeline = document.registerElement 'cat-selector',   (fromPrototype HTMLHeadingElement)
-CatTimeline = document.registerElement 'cat-keyframes',  (fromPrototype HTMLElement)
-CatTimeline = document.registerElement 'cat-keyframe',   (fromPrototype HTMLElement)
-CatTimeline = document.registerElement 'cat-name',       (fromPrototype HTMLHeadingElement)
-CatTimeline = document.registerElement 'cat-time',       (fromPrototype HTMLHeadingElement)
-CatTimeline = document.registerElement 'cat-properties', (fromPrototype HTMLElement)
-CatTimeline = document.registerElement 'cat-controls',   (fromPrototype HTMLElement)
+CatTimeline = fromPrototype HTMLElement, { test: -> console.log 'test'}
+
+document.registerElement 'cat-timeline',   CatTimeline
+document.registerElement 'cat-grid',       (fromPrototype HTMLElement)
+document.registerElement 'cat-gridline',   (fromPrototype HTMLElement)
+document.registerElement 'cat-animations', (fromPrototype HTMLElement)
+document.registerElement 'cat-animation',  (fromPrototype HTMLElement)
+document.registerElement 'cat-selector',   (fromPrototype HTMLHeadingElement)
+document.registerElement 'cat-keyframes',  (fromPrototype HTMLElement)
+document.registerElement 'cat-keyframe',   (fromPrototype HTMLElement)
+document.registerElement 'cat-name',       (fromPrototype HTMLHeadingElement)
+document.registerElement 'cat-time',       (fromPrototype HTMLHeadingElement)
+document.registerElement 'cat-properties', (fromPrototype HTMLElement)
+document.registerElement 'cat-controls',   (fromPrototype HTMLElement)
